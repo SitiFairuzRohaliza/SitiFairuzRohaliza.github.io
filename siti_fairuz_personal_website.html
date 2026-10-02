@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siti Fairuz — Learning & Development</title>
+<meta name="description" content="Siti Fairuz — Psychology, Learning & Development, TVET and Programme Development.">
+<style>
+:root{
+  --bg:#f7f6f2; --ink:#17211f; --muted:#68736f; --line:#dfe2dc;
+  --accent:#274b45; --soft:#e7eee9; --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(247,246,242,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(223,226,220,.7)}
+.nav-inner{max-width:1180px;margin:auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:-.04em;font-size:20px}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+.hero{min-height:92vh;display:grid;align-items:center;max-width:1180px;margin:auto;padding:140px 28px 80px;grid-template-columns:1.15fr .85fr;gap:70px}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:20px}
+h1{font-size:clamp(54px,7vw,92px);line-height:.95;letter-spacing:-.065em;max-width:850px}
+.hero-copy{font-size:18px;color:var(--muted);max-width:650px;margin:28px 0 34px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:13px 20px;border:1px solid var(--ink);border-radius:999px;font-size:14px;font-weight:700}
+.btn.primary{background:var(--ink);color:white}
+.btn:hover{transform:translateY(-1px)}
+.hero-card{background:var(--accent);color:white;border-radius:30px;min-height:480px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
+.hero-card:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;border:1px solid rgba(255,255,255,.25);right:-100px;top:-80px}
+.monogram{font-size:120px;line-height:.8;font-weight:800;letter-spacing:-.1em;opacity:.9}
+.card-bottom{position:relative;z-index:2}
+.card-bottom p{font-size:14px;opacity:.75;margin-bottom:6px}
+.card-bottom strong{font-size:24px;letter-spacing:-.03em}
+.section{max-width:1180px;margin:auto;padding:110px 28px}
+.section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:48px}
+.section-kicker{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.section h2{font-size:clamp(38px,5vw,62px);letter-spacing:-.055em;line-height:1}
+.section-intro{max-width:520px;color:var(--muted)}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+.about p{font-size:21px;line-height:1.55;letter-spacing:-.02em}
+.skills{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.skill{border:1px solid var(--line);padding:24px 18px;min-height:150px;border-radius:18px;background:rgba(255,255,255,.35)}
+.skill span{font-size:12px;color:var(--muted)}
+.skill h3{margin-top:30px;font-size:19px;letter-spacing:-.03em}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.stat{background:var(--bg);padding:34px}
+.stat strong{display:block;font-size:46px;letter-spacing:-.06em}
+.stat span{color:var(--muted);font-size:14px}
+.timeline{border-top:1px solid var(--line)}
+.role{display:grid;grid-template-columns:180px 1fr;gap:50px;padding:30px 0;border-bottom:1px solid var(--line)}
+.role .date{font-size:13px;color:var(--muted)}
+.role h3{font-size:27px;letter-spacing:-.035em}
+.role p{color:var(--muted);margin-top:8px;max-width:750px}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.project{padding:32px;border:1px solid var(--line);border-radius:24px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;background:white}
+.project:nth-child(2){background:var(--soft)}
+.project .num{font-size:12px;color:var(--muted)}
+.project h3{font-size:30px;letter-spacing:-.045em}
+.project p{color:var(--muted)}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.edu-card{border:1px solid var(--line);border-radius:24px;padding:32px;background:white}
+.edu-card h3{font-size:25px;letter-spacing:-.04em}
+.edu-card p{color:var(--muted);margin-top:8px}
+.contact{background:var(--ink);color:white;border-radius:34px;padding:70px;display:flex;align-items:end;justify-content:space-between;gap:40px}
+.contact h2{font-size:clamp(42px,6vw,76px);line-height:.95;letter-spacing:-.06em;max-width:650px}
+.contact p{color:rgba(255,255,255,.68);max-width:480px;margin-top:20px}
+.contact .btn{border-color:white;color:white;margin-top:28px}
+footer{max-width:1180px;margin:auto;padding:35px 28px 50px;display:flex;justify-content:space-between;color:var(--muted);font-size:13px}
+@media(max-width:850px){
+ .nav-links{display:none}.hero{grid-template-columns:1fr;padding-top:120px}.hero-card{min-height:330px}
+ .about,.edu{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}
+ .stats{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}
+ .role{grid-template-columns:1fr;gap:8px}.contact{padding:40px;display:block}
+ .section{padding:80px 22px}.hero{padding-left:22px;padding-right:22px}footer{padding-left:22px;padding-right:22px}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#home">Siti<span>Fairuz.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#experience">Experience</a>
+      <a href="#projects">Projects</a><a href="#contact">Connect</a>
+    </div>
+  </div>
+</nav>
+
+<main id="home">
+<section class="hero">
+  <div>
+    <div class="eyebrow">Psychology · Learning & Development · TVET</div>
+    <h1>Building people. Developing skills. Creating opportunities.</h1>
+    <p class="hero-copy">I work across Learning & Development, TVET, programme development and strategic partnerships — turning learning initiatives into meaningful opportunities for people and organisations.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#experience">View my experience</a>
+      <a class="btn" href="#contact">Let's connect</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="monogram">SF</div>
+    <div class="card-bottom">
+      <p>Based in Kuala Lumpur, Malaysia</p>
+      <strong>People & Programme Development</strong>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-head">
+    <div><div class="section-kicker">01 — About</div><h2>A people-first approach to learning.</h2></div>
+    <p class="section-intro">A Psychology graduate from Universiti Pendidikan Sultan Idris with a professional focus on developing people, programmes and pathways into employment.</p>
+  </div>
+  <div class="about">
+    <div></div>
+    <p>My work sits at the intersection of <strong>people development, skills training and programme management</strong>. I enjoy turning ideas into structured programmes, coordinating stakeholders and creating learning experiences that connect training with real-world outcomes.</p>
+  </div>
+</section>
+
+<section class="section" id="expertise">
+  <div class="section-head">
+    <div><div class="section-kicker">02 — Expertise</div><h2>What I do</h2></div>
+    <p class="section-intro">From programme design to partnerships, I work across the full learning and development cycle.</p>
+  </div>
+  <div class="skills">
+    <div class="skill"><span>01</span><h3>Learning & Development</h3></div>
+    <div class="skill"><span>02</span><h3>TVET Programme Development</h3></div>
+    <div class="skill"><span>03</span><h3>Training & Programme Management</h3></div>
+    <div class="skill"><span>04</span><h3>Industry Partnerships</h3></div>
+    <div class="skill"><span>05</span><h3>Community & Talent Development</h3></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div><div class="section-kicker">03 — Impact</div><h2>Work that moves beyond the classroom.</h2></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong>250+</strong><span>Learners & participants reached</span></div>
+    <div class="stat"><strong>RM1M+</strong><span>Programme revenue generated / managed</span></div>
+    <div class="stat"><strong>83.3%</strong><span>Employment placement in a tracked cohort</span></div>
+    <div class="stat"><strong>TVET</strong><span>Skills-to-employment programmes</span></div>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="section-head">
+    <div><div class="section-kicker">04 — Experience</div><h2>Professional journey</h2></div>
+  </div>
+  <div class="timeline">
+    <div class="role">
+      <div class="date">2025 — Present</div>
+      <div><h3>UOA Academy · Learning & Development / Programme & Partnership Work</h3><p>Managing learning programmes, TVET initiatives, industry partnerships, stakeholder coordination, reporting, programme administration and skills-to-employment pathways.</p></div>
+    </div>
+    <div class="role">
+      <div class="date">Earlier career</div>
+      <div><h3>Programme, Administration & Coordination</h3><p>Experience supporting projects, stakeholders and operational workflows, building a foundation for work in people development and programme management.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="section-head">
+    <div><div class="section-kicker">05 — Selected Projects</div><h2>Turning ideas into initiatives.</h2></div>
+    <p class="section-intro">Selected work across TVET, alumni engagement, community development and learning.</p>
+  </div>
+  <div class="projects">
+    <div class="project"><span class="num">01 · TVET</span><div><h3>Elderly Care Skills Programme</h3><p>Developing and coordinating a skills-to-employment pathway combining theory, practical training and industry placement.</p></div></div>
+    <div class="project"><span class="num">02 · Alumni</span><div><h3>URNext Alumni Community</h3><p>Building an alumni engagement platform connecting graduates with opportunities, initiatives, training and career development.</p></div></div>
+    <div class="project"><span class="num">03 · Partnerships</span><div><h3>Industry & Strategic Partnerships</h3><p>Coordinating collaborations across industry, government agencies, sponsors and community stakeholders.</p></div></div>
+    <div class="project"><span class="num">04 · Learning</span><div><h3>Training & Career Readiness</h3><p>Supporting learning initiatives that strengthen employability, mindset and workplace readiness.</p></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <div><div class="section-kicker">06 — Education & Recognition</div><h2>Where it started.</h2></div>
+  </div>
+  <div class="edu">
+    <div class="edu-card"><h3>Universiti Pendidikan Sultan Idris</h3><p>Bachelor of Psychology (Honours)</p><p>CGPA 3.89</p></div>
+    <div class="edu-card"><h3>Royal Education Award</h3><p>Anugerah Pelajaran DiRaja — Pingat Jaya Cemerlang</p><p>UPSI Convocation 2024</p></div>
+    <div class="edu-card"><h3>Perdana Fellow</h3><p>Felo Perdana 2022 under the Ministry of Education</p></div>
+    <div class="edu-card"><h3>SSEAYP 2023</h3><p>Participant in the Ship for Southeast Asian and Japanese Youth Programme</p></div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="contact">
+    <div>
+      <div class="section-kicker" style="color:#b9d2c8">07 — Connect</div>
+      <h2>Let's build something meaningful.</h2>
+      <p>Open to conversations around Learning & Development, TVET, talent development, programme partnerships and meaningful collaborations.</p>
+    </div>
+    <div>
+      <a class="btn" href="mailto:sitifairuz.ejahar@uoa.com.my">Get in touch</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>© 2026 Siti Fairuz</span>
+  <span>Psychology · L&D · TVET</span>
+</footer>
+</body>
+</html>
