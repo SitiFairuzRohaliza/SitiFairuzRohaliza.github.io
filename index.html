@@ -3,200 +3,205 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Siti Fairuz — Trainer, Facilitator &amp; Speaker</title>
-<meta name="description" content="Siti Fairuz Rohaliza — psychology-trained trainer, facilitator and speaker on wellbeing, motivation and youth leadership, and Learning &amp; Development professional in Kuala Lumpur, Malaysia.">
+<title>Siti Fairuz Rohaliza — Learning & Development Professional</title>
+<meta name="description" content="Siti Fairuz Rohaliza — Learning & Development professional in Kuala Lumpur. Training needs analysis, programme management, HRD Corp, talent development and training delivery.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --green:#274B45;
-    --green-dark:#1B3632;
-    --green-soft:#E3ECEA;
-    --light:#EAEDED;
-    --ink:#1F2726;
-    --muted:#5E6B69;
-    --line:#D6DEDC;
-    --bg:#F7F8F7;
-    --white:#FFFFFF;
+    --green:#274B45; --green-dark:#1B3632; --green-soft:#E3ECEA; --green-mid:#3E6A62;
+    --light:#EAEDED; --ink:#1F2726; --muted:#5E6B69; --line:#D6DEDC; --bg:#F7F8F7; --white:#fff;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
   body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:16px}
   a{color:inherit;text-decoration:none}
   img{max-width:100%;display:block}
+  button{font:inherit;cursor:pointer}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
   h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:700;line-height:1.2;color:var(--green-dark)}
   section{padding:96px 0}
+  .alt{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
   .eyebrow span{opacity:.5;margin-right:8px}
-  .section-title{font-size:clamp(28px,4vw,40px);margin-bottom:20px;max-width:720px}
-  .lead{color:var(--muted);max-width:680px;font-size:17px}
+  .section-title{font-size:clamp(28px,4vw,40px);margin-bottom:16px;max-width:760px}
+  .lead{color:var(--muted);max-width:700px;font-size:17px}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* progress bar */
+  #progress{position:fixed;top:0;left:0;height:3px;background:var(--green);width:0;z-index:100}
 
   /* NAV */
   nav{position:sticky;top:0;z-index:50;background:rgba(247,248,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
   .logo{display:flex;align-items:center;gap:10px;font-weight:600}
   .logo-mark{width:36px;height:36px;border-radius:8px;background:var(--green);color:var(--light);display:grid;place-items:center;font-weight:700;font-size:15px;letter-spacing:-.5px}
-  .nav-links{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--muted)}
-  .nav-links a:hover{color:var(--green)}
-  .menu-btn{display:none;background:none;border:0;font-size:24px;color:var(--green);cursor:pointer}
+  .nav-links{display:flex;gap:24px;font-size:14px;font-weight:500;color:var(--muted)}
+  .nav-links a{position:relative;padding:4px 0}
+  .nav-links a:hover,.nav-links a.active{color:var(--green)}
+  .nav-links a.active::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--green);border-radius:2px}
+  .menu-btn{display:none;background:none;border:0;font-size:24px;color:var(--green)}
 
   /* HERO */
-  .hero{padding:88px 0 96px}
-  .hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:center}
-  .hero h1{font-size:clamp(36px,5.5vw,58px);margin-bottom:22px}
-  .hero p{color:var(--muted);font-size:18px;max-width:560px;margin-bottom:32px}
+  .hero{padding:80px 0 88px}
+  .hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:center}
+  .status{display:inline-flex;align-items:center;gap:8px;background:var(--green-soft);color:var(--green-dark);font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;margin-bottom:22px}
+  .status i{width:8px;height:8px;border-radius:50%;background:#2E9E6B;box-shadow:0 0 0 0 rgba(46,158,107,.6);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(46,158,107,0)}100%{box-shadow:0 0 0 0 rgba(46,158,107,0)}}
+  .hero h1{font-size:clamp(34px,5vw,54px);margin-bottom:18px}
+  .typed{color:var(--green-mid);border-right:3px solid var(--green-mid);padding-right:4px;white-space:nowrap}
+  .hero p{color:var(--muted);font-size:18px;max-width:580px;margin-bottom:30px}
   .btns{display:flex;flex-wrap:wrap;gap:12px}
-  .btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;transition:.2s}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;transition:.2s;border:0}
   .btn-primary{background:var(--green);color:var(--white)}
-  .btn-primary:hover{background:var(--green-dark)}
-  .btn-ghost{border:1.5px solid var(--green);color:var(--green)}
+  .btn-primary:hover{background:var(--green-dark);transform:translateY(-2px)}
+  .btn-ghost{border:1.5px solid var(--green);color:var(--green);background:transparent}
   .btn-ghost:hover{background:var(--green-soft)}
-  .hero-card{background:var(--green);color:var(--light);border-radius:24px;padding:28px;position:relative;overflow:hidden}
-  .hero-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;margin-bottom:20px;background:var(--green-dark)}
-  .hero-card .name{font-family:'Fraunces',serif;font-size:22px;color:var(--white)}
-  .hero-card .meta{font-size:14px;opacity:.8;margin-top:4px}
-  .hero-card .tagline{margin-top:14px;font-size:13px;letter-spacing:.06em;opacity:.7}
+  .hero-card{background:var(--green);color:var(--light);border-radius:24px;padding:24px}
+  .hero-card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px;margin-bottom:18px}
+  .hero-card .name{font-family:'Fraunces',serif;font-size:21px;color:var(--white)}
+  .hero-card .meta{font-size:14px;opacity:.85;margin-top:4px}
+
+  /* STATS */
+  .strip{background:var(--green-dark);color:var(--light);padding:44px 0}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .stat{border-left:3px solid var(--light);padding-left:20px}
+  .stat b{display:block;font-family:'Fraunces',serif;font-size:42px;color:var(--white);line-height:1.1}
+  .stat > span{font-size:14.5px;opacity:.82}
 
   /* ABOUT */
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:12px}
+  .about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;margin-top:12px;align-items:start}
   .about-grid p{color:var(--muted);margin-bottom:16px}
-  .facts{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:28px}
-  .facts div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .facts{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:8px 26px}
+  .facts div{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
   .facts div:last-child{border-bottom:0}
   .facts dt{color:var(--muted)}
   .facts dd{font-weight:600;text-align:right}
 
-  /* TRAINER */
-  .trainer{background:var(--green);color:var(--light)}
-  .trainer h2,.trainer h3{color:var(--white)}
-  .trainer .eyebrow{color:var(--light);opacity:.85}
-  .trainer .lead{color:var(--light);opacity:.85}
-  .topics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:44px 0}
-  .topic{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:24px}
-  .topic h3{font-size:19px;margin-bottom:8px}
-  .topic p{font-size:14.5px;opacity:.85}
-  .clients-label{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:14px}
-  .clients{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
-  .chip{border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:8px 16px;font-size:14px}
-  .trainer .btn-primary{background:var(--light);color:var(--green-dark)}
-  .trainer .btn-primary:hover{background:var(--white)}
+  /* SKILLS (interactive tabs) */
+  .skills{display:grid;grid-template-columns:300px 1fr;gap:28px;margin-top:40px}
+  .skill-tabs{display:flex;flex-direction:column;gap:8px}
+  .skill-tab{text-align:left;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px 18px;font-weight:600;color:var(--ink);transition:.2s}
+  .skill-tab:hover{border-color:var(--green)}
+  .skill-tab.active{background:var(--green);color:var(--white);border-color:var(--green)}
+  .skill-panel{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:32px;display:none;animation:fade .35s ease}
+  .skill-panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .skill-panel h3{font-size:24px;margin-bottom:8px}
+  .skill-panel > p{color:var(--muted);margin-bottom:18px}
+  .skill-panel h4{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+  .skill-panel ul{list-style:none}
+  .skill-panel li{padding:10px 0 10px 28px;border-top:1px solid var(--line);position:relative;font-size:15px}
+  .skill-panel li::before{content:'✓';position:absolute;left:4px;color:var(--green);font-weight:700}
 
-  /* CARDS */
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+  /* EXPERIENCE (tabs) */
+  .exp-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:40px;border-bottom:1px solid var(--line)}
+  .exp-tab{background:none;border:0;padding:12px 18px;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1px}
+  .exp-tab.active{color:var(--green);border-color:var(--green)}
+  .exp-panel{display:none;padding-top:30px;animation:fade .35s ease}
+  .exp-panel.active{display:block}
+  .exp-panel .when{font-size:13px;font-weight:600;color:var(--green);letter-spacing:.06em}
+  .exp-panel h3{font-size:26px;margin:4px 0 2px}
+  .exp-panel .role{color:var(--muted);font-weight:500;margin-bottom:18px}
+  .exp-panel ul{padding-left:20px;color:var(--ink);max-width:860px}
+  .exp-panel li{margin-bottom:8px}
+  .exp-panel li::marker{color:var(--green)}
+
+  /* PROJECTS (expandable cards) */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px}
   .card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:28px;transition:.2s}
-  .card:hover{border-color:var(--green);transform:translateY(-3px)}
-  .card .num{font-size:13px;font-weight:600;color:var(--green);margin-bottom:14px}
-  .card h3{font-size:20px;margin-bottom:10px}
-  .card p{color:var(--muted);font-size:15px}
+  .card:hover{border-color:var(--green);box-shadow:0 10px 30px rgba(39,75,69,.08)}
   .tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--green);background:var(--green-soft);padding:4px 10px;border-radius:999px;margin-bottom:14px}
+  .card h3{font-size:21px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15px}
+  .card .result{margin-top:14px;font-weight:600;color:var(--green-dark);font-size:15px}
+  .more{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .more ul{padding:14px 0 0 18px;color:var(--muted);font-size:14.5px}
+  .more li{margin-bottom:6px}
+  .toggle{margin-top:14px;background:none;border:0;color:var(--green);font-weight:600;font-size:14px;padding:0}
 
-  /* IMPACT */
-  .impact{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:44px}
-  .stat{border-left:3px solid var(--green);padding-left:20px}
-  .stat b{display:block;font-family:'Fraunces',serif;font-size:42px;color:var(--green-dark);line-height:1.1}
-  .stat span{color:var(--muted);font-size:15px}
+  /* TRAINING (filterable) */
+  .train{background:var(--green);color:var(--light)}
+  .train h2{color:var(--white)}
+  .train .eyebrow{color:var(--light);opacity:.85}
+  .train .lead{color:var(--light);opacity:.85}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:36px 0 20px}
+  .filter{background:transparent;border:1px solid rgba(255,255,255,.35);color:var(--light);padding:8px 16px;border-radius:999px;font-size:14px;transition:.2s}
+  .filter:hover{border-color:var(--white)}
+  .filter.active{background:var(--light);color:var(--green-dark);border-color:var(--light)}
+  .count{font-size:14px;opacity:.8;margin-bottom:16px}
+  .sessions{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .session{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:20px 22px;display:flex;justify-content:space-between;gap:16px;transition:.25s}
+  .session.hide{display:none}
+  .session .yr{font-size:12.5px;font-weight:600;letter-spacing:.06em;opacity:.7}
+  .session h4{font-size:16px;font-weight:600;color:var(--white);margin:3px 0}
+  .session small{font-size:13.5px;opacity:.75}
+  .session .pax{text-align:right;flex:0 0 auto}
+  .session .pax b{display:block;font-family:'Fraunces',serif;font-size:24px;color:var(--white)}
+  .session .pax span{font-size:12px;opacity:.7}
 
-  /* TIMELINE */
-  .timeline{margin-top:44px;border-left:2px solid var(--line);padding-left:32px}
-  .job{position:relative;padding-bottom:44px}
-  .job:last-child{padding-bottom:0}
-  .job::before{content:'';position:absolute;left:-41px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--green);border:4px solid var(--bg)}
-  .job .when{font-size:13px;font-weight:600;color:var(--green);letter-spacing:.04em}
-  .job h3{font-size:22px;margin:4px 0 2px}
-  .job .role{color:var(--muted);font-weight:500;margin-bottom:12px}
-  .job ul{padding-left:18px;color:var(--muted);font-size:15px}
-  .job li{margin-bottom:6px}
+  /* GALLERY + LIGHTBOX */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+  .gallery figure{position:relative;border-radius:14px;overflow:hidden;cursor:zoom-in}
+  .gallery img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .5s}
+  .gallery figure:hover img{transform:scale(1.05)}
+  .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:13px;opacity:0;transition:.3s}
+  .gallery figure:hover figcaption{opacity:1}
+  #lightbox{position:fixed;inset:0;background:rgba(10,20,18,.92);display:none;align-items:center;justify-content:center;z-index:200;padding:24px;flex-direction:column;gap:14px}
+  #lightbox.open{display:flex}
+  #lightbox img{max-height:80vh;border-radius:12px}
+  #lightbox p{color:#fff;font-size:15px;text-align:center}
+  #lightbox button{position:absolute;top:18px;right:24px;background:none;border:0;color:#fff;font-size:34px}
 
   /* EDUCATION */
-  .edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px}
-  .edu{display:flex;gap:18px;background:var(--white);border:1px solid var(--line);border-radius:20px;padding:24px}
-  .edu .yr{flex:0 0 64px;font-family:'Fraunces',serif;font-size:20px;color:var(--green)}
-  .edu h3{font-size:17px;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:600;color:var(--ink)}
+  .edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
+  .edu{display:flex;gap:18px;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:22px}
+  .edu .yr{flex:0 0 60px;font-family:'Fraunces',serif;font-size:20px;color:var(--green)}
+  .edu h3{font-size:16.5px;margin-bottom:3px;font-family:'Inter',sans-serif;font-weight:600;color:var(--ink)}
   .edu p{color:var(--muted);font-size:14.5px}
 
   /* CONTACT */
-  .contact{text-align:center}
+  .contact{text-align:center;background:var(--green-soft)}
   .contact .section-title,.contact .lead{margin-left:auto;margin-right:auto}
-  .contact .btns{justify-content:center;margin-top:32px}
-  .contact-list{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;margin-top:28px;color:var(--muted);font-size:15px}
-  .contact-list a:hover{color:var(--green)}
+  .contact .btns{justify-content:center;margin-top:30px}
+  .contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;text-align:left}
+  .cc{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .cc span{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+  .cc a,.cc b{font-weight:600;word-break:break-word}
+  .copy{margin-top:10px;background:var(--green-soft);border:0;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--green)}
+  .ref{margin-top:28px;font-size:14px;color:var(--muted)}
 
-  footer{background:var(--green-dark);color:var(--light);padding:28px 0;font-size:14px}
+  footer{background:var(--green-dark);color:var(--light);padding:26px 0;font-size:14px}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;opacity:.85}
+  #toTop{position:fixed;right:22px;bottom:22px;width:46px;height:46px;border-radius:50%;background:var(--green);color:#fff;border:0;font-size:20px;opacity:0;pointer-events:none;transition:.3s;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+  #toTop.show{opacity:1;pointer-events:auto}
 
-  /* RESPONSIVE */
   @media (max-width:900px){
-    .hero .wrap,.about-grid{grid-template-columns:1fr}
-    .hero-card{max-width:380px}
-    .topics{grid-template-columns:repeat(2,1fr)}
-    .cards{grid-template-columns:repeat(2,1fr)}
+    .hero .wrap,.about-grid,.skills{grid-template-columns:1fr}
+    .hero-card{max-width:360px}
+    .skill-tabs{flex-direction:row;flex-wrap:wrap}
     .stats{grid-template-columns:repeat(2,1fr)}
-    .edu-grid{grid-template-columns:1fr}
+    .cards,.sessions,.edu-grid,.contact-cards{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr)}
   }
   @media (max-width:640px){
     section{padding:72px 0}
     .nav-links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line)}
     .nav-links.open{display:flex}
     .nav-links a{padding:14px 24px;border-top:1px solid var(--line)}
+    .nav-links a.active::after{display:none}
     .menu-btn{display:block}
-    .topics,.cards{grid-template-columns:1fr}
-  }
-
-  .strip{background:var(--green-dark);color:var(--light);padding:40px 0}
-  .strip .stats{margin-top:0}
-  .strip .stat{border-color:var(--light)}
-  .strip .stat b{color:var(--white)}
-  .strip .stat span{color:var(--light);opacity:.8}
-  .quote{font-family:'Fraunces',serif;font-size:24px;color:var(--green);margin-bottom:18px}
-  .about-photo{border-radius:20px;overflow:hidden}
-  .about-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
-  .about-photo figcaption,.feat figcaption,.gallery figcaption{font-size:13px;color:var(--muted);padding:8px 2px}
-  .topic-list{display:grid;gap:14px;margin-top:40px}
-  .topic-row{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px 24px}
-  .topic-row h3{font-size:20px;margin-bottom:6px}
-  .topic-row p{opacity:.88;font-size:15px;margin-bottom:10px}
-  .topic-row .meta{display:flex;flex-wrap:wrap;gap:8px}
-  .formats{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:36px 0}
-  .formats h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:12px;font-weight:600}
-  .formats .clients{margin-bottom:0}
-  table.track{width:100%;border-collapse:collapse;margin-top:40px;background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:15px}
-  .track th{background:var(--green);color:var(--white);text-align:left;padding:14px 18px;font-weight:600;font-size:14px}
-  .track td{padding:14px 18px;border-top:1px solid var(--line);vertical-align:top}
-  .track td:first-child{white-space:nowrap;color:var(--green);font-weight:600;width:110px}
-  .track td:last-child{text-align:right;font-weight:600;width:110px}
-  .track small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
-  .feat{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:48px}
-  .feat + .feat{margin-top:64px}
-  .feat h3{font-size:24px;margin-bottom:6px}
-  .feat .when{font-size:14px;color:var(--green);font-weight:600;margin-bottom:14px}
-  .feat p{color:var(--muted)}
-  .feat-photos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .feat-photos img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:12px}
-  .feat-photos .wide{grid-column:span 2}
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-  .gallery img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:14px}
-  .invite-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;text-align:left;margin-top:36px}
-  .invite-grid ul{list-style:none}
-  .invite-grid li{padding:12px 0;border-bottom:1px solid var(--line);color:var(--ink)}
-  .invite-grid li::before{content:'✓';color:var(--green);font-weight:700;margin-right:10px}
-  .contact-rows div{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
-  .contact-rows dt{width:90px;color:var(--muted)}
-  .contact-rows dd{font-weight:600}
-  @media (max-width:900px){
-    .feat,.invite-grid,.formats{grid-template-columns:1fr}
-    .gallery{grid-template-columns:repeat(2,1fr)}
-    .track td:first-child{width:auto}
-  }
-  @media (max-width:640px){
     .gallery{grid-template-columns:1fr}
-    .track{font-size:14px}.track th,.track td{padding:12px}
+    .typed{white-space:normal}
   }
 </style>
 </head>
 <body>
+<div id="progress"></div>
 
 <!-- NAVIGATION -->
 <nav>
@@ -205,11 +210,12 @@
     <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
     <div class="nav-links" onclick="this.classList.remove('open')">
       <a href="#about">About</a>
-      <a href="#topics">Topics</a>
-      <a href="#track">Track Record</a>
-      <a href="#gallery">Gallery</a>
+      <a href="#skills">Strengths</a>
       <a href="#experience">Experience</a>
-      <a href="#contact">Invite</a>
+      <a href="#projects">Projects</a>
+      <a href="#training">Training</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -218,20 +224,19 @@
 <header class="hero" id="home">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Trainer · Facilitator · Speaker</p>
-      <h1>Helping people grow, heal and lead.</h1>
-      <p>I am a psychology-trained trainer who helps students, young people and working adults understand themselves better, manage stress and emotions, and step up as leaders. Wellbeing · Motivation · Youth Leadership.</p>
+      <div class="status"><i></i>Open to Learning &amp; Development opportunities · Kuala Lumpur</div>
+      <h1>Learning &amp; Development professional focused on <span class="typed" id="typed">people development</span></h1>
+      <p>I plan, deliver and measure learning that builds capability, from training needs analysis and HRD Corp-funded programmes to talent selection and hands-on facilitation.</p>
       <div class="btns">
-        <a href="#contact" class="btn btn-primary">Invite me to your event</a>
-        <a href="#topics" class="btn btn-ghost">Training topics</a>
+        <a href="Website_SitiFairuz/CV_Siti_Fairuz.pdf" target="_blank" class="btn btn-primary">⬇ Download CV</a>
+        <a href="#contact" class="btn btn-ghost">Contact me</a>
         <a href="https://www.linkedin.com/in/fairuzejahar/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn ↗</a>
       </div>
     </div>
     <div class="hero-card">
       <img src="profile.jpg" alt="Siti Fairuz Rohaliza">
       <div class="name">Siti Fairuz Rohaliza binti Ejahar</div>
-      <div class="meta">Trainer, Facilitator &amp; Speaker<br>Learning &amp; Growth Specialist, UOA Academy</div>
-      <div class="tagline">#fairuznakterbangtinggi</div>
+      <div class="meta">Learning &amp; Growth Specialist, UOA Academy (UOA Group Berhad)<br>B. Psychology (Hons), UPSI</div>
     </div>
   </div>
 </header>
@@ -240,237 +245,410 @@
 <div class="strip">
   <div class="wrap">
     <div class="stats">
-      <div class="stat"><b>1,100+</b><span>participants reached through invited sessions since 2024</span></div>
-      <div class="stat"><b>14</b><span>invited sessions and engagements</span></div>
-      <div class="stat"><b>300</b><span>participants at the largest single session</span></div>
-      <div class="stat"><b>MBOR</b><span>Malaysia Book of Records, as Programme Director</span></div>
+      <div class="stat"><b><span class="counter" data-to="80">0</span></b><span>Associate Trainers onboarded through Trainers Connect</span></div>
+      <div class="stat"><b>RM<span class="counter" data-to="100">0</span>K</b><span>government grant secured from JPK</span></div>
+      <div class="stat"><b><span class="counter" data-to="500">0</span>+</b><span>applications screened for programme intake in one month</span></div>
+      <div class="stat"><b><span class="counter" data-to="1100" data-comma="1">0</span>+</b><span>participants trained through invited sessions since 2024</span></div>
     </div>
   </div>
 </div>
 
 <!-- 01 ABOUT -->
 <section id="about">
-  <div class="wrap">
-    <p class="eyebrow"><span>01</span>Meet Your Trainer</p>
-    <h2 class="section-title">Warm, interactive and practical, grounded in psychology.</h2>
+  <div class="wrap reveal">
+    <p class="eyebrow"><span>01</span>About</p>
+    <h2 class="section-title">I help organisations develop their people, and I can stand in front of the room too.</h2>
     <div class="about-grid">
       <div>
-        <p>A graduate of the Bachelor of Psychology (Hons) from Universiti Pendidikan Sultan Idris with a CGPA of 3.89, I received the Royal Education Award (Pingat Jaya Cemerlang) in 2024 and the Outstanding Graduate Award from Persatuan Siswazah Wanita Malaysia in 2025.</p>
-        <p>My experience spans the corporate, education and government sectors: as a Learning &amp; Development professional at UOA Academy, a Perdana Fellow in the Office of the Minister of Education, and a Malaysian delegate to the Ship for Southeast Asian and Japanese Youth Programme (SSEAYP).</p>
-        <p>My sessions are warm, interactive and practical, grounded in psychology and real-life experience.</p>
+        <p>I am a Learning &amp; Growth Specialist at UOA Academy, part of UOA Group Berhad, reporting directly to the Chief Learning Officer. I manage learning programmes end to end: identifying needs, planning, selecting participants, coordinating delivery, engaging stakeholders and reporting on results.</p>
+        <p>My background in psychology shapes how I design learning. I pay attention to how adults learn, what motivates them, and whether what happens in a training room carries over to the job.</p>
+        <p>Alongside my role, I am an active trainer and facilitator. Agencies such as KBS, JBSN, Yayasan Tenaga Nasional and Lembaga Zakat Selangor have invited me to run sessions on wellbeing, motivation and career readiness. That experience keeps my programme design practical.</p>
       </div>
-      <figure class="about-photo">
-        <img src="Website_SitiFairuz/photo-award.jpg" alt="Receiving the Royal Education Award">
-        <figcaption>Receiving the Royal Education Award (Pingat Jaya Cemerlang) from Tuanku Zara Salim, 2024</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- 02 TOPICS -->
-<section class="trainer" id="topics">
-  <div class="wrap">
-    <p class="eyebrow"><span>02</span>Training Topics</p>
-    <h2 class="section-title">Sessions tailored to your audience, objectives and duration.</h2>
-    <div class="topic-list">
-      <div class="topic-row">
-        <h3>Port Healing: Stress and Emotional Awareness</h3>
-        <p>Recognise the signs of stress, understand emotions and build simple self-care habits that protect mental wellbeing.</p>
-        <div class="meta"><span class="chip">For: Youth, employees, community groups</span><span class="chip">Format: Talk or interactive workshop</span></div>
-      </div>
-      <div class="topic-row">
-        <h3>Bounce Back: Resilience and Motivation for Students</h3>
-        <p>Turn setbacks such as disappointing results into a plan forward, rebuilding confidence, motivation and study direction.</p>
-        <div class="meta"><span class="chip">For: Students, scholarship recipients</span><span class="chip">Format: Workshop or motivational talk</span></div>
-      </div>
-      <div class="topic-row">
-        <h3>Lead with Confidence: Youth Leadership and Public Speaking</h3>
-        <p>Discover personal leadership style, speak with confidence and lead teams and programmes that create real impact.</p>
-        <div class="meta"><span class="chip">For: University students, youth leaders</span><span class="chip">Format: Workshop or camp module</span></div>
-      </div>
-      <div class="topic-row">
-        <h3>Mind Matters: Mental Health and Digital Wellbeing</h3>
-        <p>Raise awareness of mental health and healthy technology use, including gadget dependency among children and teens.</p>
-        <div class="meta"><span class="chip">For: Parents, teachers, children, residents’ associations</span><span class="chip">Format: Talk or forum panel</span></div>
-      </div>
-      <div class="topic-row">
-        <h3>Grow Forward: Personal Growth and Career Readiness</h3>
-        <p>Build self-awareness, a growth mindset and the soft skills needed to move confidently from study into work.</p>
-        <div class="meta"><span class="chip">For: Graduates, asnaf and career switchers, new hires</span><span class="chip">Format: Workshop</span></div>
-      </div>
-    </div>
-    <div class="formats">
-      <div><h4>Session formats</h4><div class="clients"><span class="chip">Keynote or talk</span><span class="chip">Interactive workshop</span><span class="chip">Forum or podcast panellist</span><span class="chip">Programme facilitation</span><span class="chip">Module development</span><span class="chip">Master of ceremonies</span></div></div>
-      <div><h4>Delivery</h4><div class="clients"><span class="chip">Bahasa Melayu</span><span class="chip">English</span><span class="chip">Physical sessions</span><span class="chip">Online sessions</span><span class="chip">Small groups</span><span class="chip">Large audiences</span></div></div>
-    </div>
-    <a href="#contact" class="btn btn-primary">Invite me for a session</a>
-  </div>
-</section>
-
-<!-- 03 TRACK RECORD -->
-<section id="track">
-  <div class="wrap">
-    <p class="eyebrow"><span>03</span>Track Record</p>
-    <h2 class="section-title">Invited sessions and engagements</h2>
-    <div style="overflow-x:auto">
-      <table class="track">
-        <tr><th>Year</th><th>Session and organiser</th><th>Participants</th></tr>
-        <tr><td>Sep 2026</td><td>Stress and Emotion Management Workshop, Program Towards Better and Excellent Talent<small>Yayasan Tenaga Nasional Berhad (YTN) · Villea Morib</small></td><td>60</td></tr>
-        <tr><td>2026</td><td>Port Healing: Stress and Emotional Awareness, National Sports Day<small>Bukit Bintang District Youth and Sports Office (JBSN) · Kuala Lumpur</small></td><td>130</td></tr>
-        <tr><td>2026</td><td>GenZ Meets Leaders 1.0, invited panellist with YB Dr. Radzi Jidin<small>Office of the Member of Parliament for Putrajaya · Putrajaya</small></td><td>30</td></tr>
-        <tr><td>Jul 2025</td><td>Career Transformation Talk for Asnaf, PATH 2025 Series 9<small>Lembaga Zakat Selangor · Wisma PKPS, Shah Alam</small></td><td>250</td></tr>
-        <tr><td>May 2025</td><td>Evolution Xpert: alumni sharing session on student life and success tips (online)<small>Sekretariat Rakan Muda UPSI · Google Meet</small></td><td>140</td></tr>
-        <tr><td>Mar 2025</td><td>PDT Module Development Workshop, International Youth Exchange Programme<small>National Youth and Sports Department (JBSN), KBS · Bangi</small></td><td>—</td></tr>
-        <tr><td>2025</td><td>Physical and Mental Wellbeing, sharing session for the SSEAYP 2025 Malaysian delegation (online)<small>International Integration Unit, JBSN, and KABESA · Online</small></td><td>30</td></tr>
-        <tr><td>Sep 2024</td><td>Managing Emotions: Pre-Departure Training, ASEAN Trans Backpackers Programme 2024<small>International Integration Unit, JBSN, and KABESA · Pusat Belia Antarabangsa Cheras</small></td><td>30</td></tr>
-        <tr><td>Jun 2024</td><td>Smart Parenting: Managing Children’s Gadget Use and Building Parental Resilience<small>Persatuan Penduduk Ampang Jaya · Ampang Jaya</small></td><td>300</td></tr>
-        <tr><td>Jun 2024</td><td>Understanding My Emotions, interactive session for primary school children<small>Sekolah Bimbingan Jalinan Kasih, Chow Kit · Kuala Lumpur</small></td><td>100</td></tr>
-        <tr><td>May 2024</td><td>SPM Motivation: Preparing to Face the SPM Examination<small>SMK Dato’ Ahmad Rasidi, Changkat Jering · Perak</small></td><td>100</td></tr>
-        <tr><td>2024</td><td>Changing Lives and Understanding Mental Illness, session with inmates<small>Kajang Women’s Prison (Penjara Wanita Kajang) · Kajang</small></td><td>50</td></tr>
-        <tr><td>2024</td><td>Hope: Rebuilding Life After Setbacks, session with Sekolah Integriti students<small>Kajang Women’s Prison (Penjara Wanita Kajang) · Kajang</small></td><td>20</td></tr>
-        <tr><td>Podcast</td><td>Podcast panellist: Understanding Paedophilia and Protecting Children (Spotify and Apple Podcasts)<small>UiTM Shah Alam students · Shah Alam</small></td><td>—</td></tr>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- 04 FEATURED -->
-<section style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <p class="eyebrow"><span>04</span>Featured Sessions</p>
-    <h2 class="section-title">Close-up on recent work</h2>
-
-    <div class="feat">
-      <div>
-        <h3>Yayasan Tenaga Nasional (YTN)</h3>
-        <div class="when">Program Towards Better and Excellent Talent · 11–13 September 2026 · Villea Morib</div>
-        <p>A stress and emotion management session for 60 YTN scholarship recipients, combining interactive discussion with a group body-mapping reflection on how stress and emotions show up in the body.</p>
-      </div>
-      <div class="feat-photos">
-        <img class="wide" src="Website_SitiFairuz/photo-ytn-group.jpg" alt="With YTN scholars and the programme team">
-        <img src="Website_SitiFairuz/photo-ytn-1.jpg" alt="Facilitating discussion with YTN scholars">
-        <img src="Website_SitiFairuz/photo-ytn-2.jpg" alt="Group reflection activity">
-      </div>
-    </div>
-
-    <div class="feat">
-      <div>
-        <h3>Lembaga Zakat Selangor</h3>
-        <div class="when">PATH 2025 Series 9 · 5 July 2025 · Wisma PKPS, Shah Alam</div>
-        <p>An invited talk on career transformation and training opportunities for around 250 asnaf participants under the Pathway for Asnaf Transformation and Holistic Development (PATH) programme, themed “Dari Mustahiq kepada Muzakki”.</p>
-      </div>
-      <div class="feat-photos">
-        <img class="wide" src="Website_SitiFairuz/photo-lzs-group.jpg" alt="With around 250 participants and the Lembaga Zakat Selangor team">
-        <img class="wide" src="Website_SitiFairuz/photo-lzs-stage.jpg" alt="Delivering the training opportunities briefing on stage">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 05 GALLERY -->
-<section id="gallery">
-  <div class="wrap">
-    <p class="eyebrow"><span>05</span>In Action</p>
-    <h2 class="section-title">Sessions, forums and programmes</h2>
-    <div class="gallery">
-      <figure><img src="Website_SitiFairuz/photo-genz.jpg" alt="GenZ Meets Leaders 1.0"><figcaption>GenZ Meets Leaders 1.0, Putrajaya, 2026</figcaption></figure>
-      <figure><img src="Website_SitiFairuz/photo-ytn-1.jpg" alt="YTN scholars"><figcaption>Facilitating YTN scholars, Villea Morib, 2026</figcaption></figure>
-      <figure><img src="Website_SitiFairuz/photo-online.jpg" alt="Online wellbeing session"><figcaption>Online wellbeing session</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- 06 EXPERIENCE -->
-<section id="experience" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <p class="eyebrow"><span>06</span>Professional Experience</p>
-    <h2 class="section-title">Learning &amp; Development career</h2>
-    <div class="timeline">
-      <div class="job">
-        <div class="when">FEB 2025 – PRESENT</div>
-        <h3>UOA Academy (UOA Group Berhad)</h3>
-        <div class="role">Learning &amp; Growth Specialist · reporting to the Chief Learning Officer</div>
-        <ul>
-          <li>Manage end-to-end learning programmes, from Training Needs Analysis and participant selection to delivery and reporting.</li>
-          <li>Support learning and talent development across UOA Group companies, including HRD Corp grant applications and levy utilisation.</li>
-          <li>Spearheaded "Trainers Connect", attracting nearly 100 potential trainers and onboarding 80 Associate Trainers.</li>
-          <li>Secured RM100,000 in government grant funding from the Department of Skills Development (JPK).</li>
-          <li>Led programmes for nearly 100 underprivileged participants through skills training, certification and employment.</li>
-        </ul>
-      </div>
-      <div class="job">
-        <div class="when">AUG 2024 – FEB 2025</div>
-        <h3>Metropolitan Corridor Sdn Bhd</h3>
-        <div class="role">Academic Executive</div>
-        <ul>
-          <li>Managed development and intervention programmes on soft skills, character and personal growth.</li>
-          <li>Conducted interviews and selection for Yayasan Peneraju scholarship programmes.</li>
-        </ul>
-      </div>
-      <div class="job">
-        <div class="when">2022</div>
-        <h3>Ministry of Education Malaysia</h3>
-        <div class="role">Perdana Fellow, Minister's Office</div>
-        <ul>
-          <li>Developed a policy proposal for an inclusive education programme for students with disabilities.</li>
-          <li>Supported programme coordination, stakeholder engagement and ministerial communications.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 07 EDUCATION & RECOGNITION -->
-<section id="education">
-  <div class="wrap">
-    <p class="eyebrow"><span>07</span>Education &amp; Recognition</p>
-    <h2 class="section-title">Where it started.</h2>
-    <div class="edu-grid">
-      <div class="edu"><div class="yr">2024</div><div><h3>Bachelor of Psychology (Hons.)</h3><p>Universiti Pendidikan Sultan Idris · CGPA 3.89 · Dean's List</p></div></div>
-      <div class="edu"><div class="yr">2024</div><div><h3>Royal Education Award</h3><p>Anugerah Pelajaran DiRaja – Pingat Jaya Cemerlang, UPSI Convocation</p></div></div>
-      <div class="edu"><div class="yr">2025</div><div><h3>Outstanding Graduate Award</h3><p>Persatuan Siswazah Wanita Malaysia (PSWM)</p></div></div>
-      <div class="edu"><div class="yr">2023</div><div><h3>Malaysian Delegate, SSEAYP</h3><p>Ship for Southeast Asian and Japanese Youth Programme</p></div></div>
-      <div class="edu"><div class="yr">2023</div><div><h3>Programme Director, Malaysia Book of Records</h3><p>"The Longest Non-Stop Public Speaking – 62 Hours", 300 participants</p></div></div>
-      <div class="edu"><div class="yr">2023</div><div><h3>Best Presenter Award</h3><p>Regional Conference on Student Activism, UTP</p></div></div>
-      <div class="edu"><div class="yr">2022</div><div><h3>Perdana Fellow</h3><p>Felo Perdana, Ministry of Education Malaysia</p></div></div>
-      <div class="edu"><div class="yr">2024</div><div><h3>Residential College Leadership Award</h3><p>Silver Category, MAPUM</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 08 INVITE -->
-<section class="contact" id="contact" style="background:var(--green-soft)">
-  <div class="wrap">
-    <p class="eyebrow"><span>08</span>Invite</p>
-    <h2 class="section-title">Invite Siti Fairuz to your event</h2>
-    <p class="lead">To help me prepare a session that fits your needs, please share:</p>
-    <div class="invite-grid">
-      <ul>
-        <li>Event name, date and venue</li>
-        <li>Audience profile and number of participants</li>
-        <li>Preferred topic and session objectives</li>
-        <li>Session format and duration</li>
-      </ul>
-      <dl class="contact-rows">
-        <div><dt>Phone</dt><dd><a href="tel:+60143222702">+60 14-322 2702</a></dd></div>
-        <div><dt>Email</dt><dd><a href="mailto:sfairuzejahar@gmail.com">sfairuzejahar@gmail.com</a></dd></div>
-        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/fairuzejahar/" target="_blank" rel="noopener">linkedin.com/in/fairuzejahar</a></dd></div>
-        <div><dt>Facebook</dt><dd><a href="https://www.facebook.com/sitifairuz.rohaliza" target="_blank" rel="noopener">facebook.com/sitifairuz.rohaliza</a></dd></div>
+      <dl class="facts">
+        <div><dt>Current role</dt><dd>Learning &amp; Growth Specialist</dd></div>
+        <div><dt>Organisation</dt><dd>UOA Academy, UOA Group Berhad</dd></div>
+        <div><dt>Reporting to</dt><dd>Chief Learning Officer</dd></div>
+        <div><dt>Education</dt><dd>B. Psychology (Hons), UPSI · CGPA 3.89</dd></div>
+        <div><dt>Languages</dt><dd>English, Bahasa Melayu</dd></div>
+        <div><dt>Location</dt><dd>Kuala Lumpur, Malaysia</dd></div>
       </dl>
     </div>
-    <div class="btns">
-      <a href="mailto:sfairuzejahar@gmail.com?subject=Training%20Invitation" class="btn btn-primary">Email an invitation</a>
-      <a href="https://wa.me/60143222702" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp ↗</a>
+  </div>
+</section>
+
+<!-- 02 STRENGTHS (interactive) -->
+<section id="skills" class="alt">
+  <div class="wrap reveal">
+    <p class="eyebrow"><span>02</span>Core Strengths</p>
+    <h2 class="section-title">What I bring to an L&amp;D team</h2>
+    <p class="lead">Select a strength to see how I have applied it.</p>
+    <div class="skills">
+      <div class="skill-tabs">
+        <button class="skill-tab active" data-skill="s1">Training Needs Analysis</button>
+        <button class="skill-tab" data-skill="s2">Programme Management</button>
+        <button class="skill-tab" data-skill="s3">HRD Corp &amp; Grant Funding</button>
+        <button class="skill-tab" data-skill="s4">Talent Selection</button>
+        <button class="skill-tab" data-skill="s5">Training Delivery</button>
+        <button class="skill-tab" data-skill="s6">Stakeholders &amp; Partnerships</button>
+      </div>
+      <div>
+        <div class="skill-panel active" id="s1">
+          <h3>Training Needs Analysis</h3>
+          <p>Finding the real development gap before deciding on a solution.</p>
+          <h4>Evidence</h4>
+          <ul>
+            <li>Conduct TNA at UOA Academy and translate findings into targeted learning programmes and implementation plans.</li>
+            <li>Align programme objectives with organisational and workforce development needs across UOA Group companies.</li>
+            <li>Analysed participant performance and development needs to build structured learning pathways at Metropolitan Corridor.</li>
+          </ul>
+        </div>
+        <div class="skill-panel" id="s2">
+          <h3>Programme Management</h3>
+          <p>Running learning initiatives end to end, on time and with clear reporting.</p>
+          <h4>Evidence</h4>
+          <ul>
+            <li>Manage programmes from needs identification and participant selection to delivery, monitoring and reporting.</li>
+            <li>Led programmes for nearly 100 underprivileged participants through skills training, professional certification and into employment.</li>
+            <li>Programme Director for a 300-participant event recognised by the Malaysia Book of Records.</li>
+          </ul>
+        </div>
+        <div class="skill-panel" id="s3">
+          <h3>HRD Corp &amp; Grant Funding</h3>
+          <p>Making training budgets go further.</p>
+          <h4>Evidence</h4>
+          <ul>
+            <li>Support HRD Corp grant applications and levy utilisation for training programmes across UOA Group companies.</li>
+            <li>Secured RM100,000 in government grant funding from the Department of Skills Development (JPK).</li>
+            <li>Support P&amp;L tracking and Q3–Q4 2026 forecasting for resource planning and 2027 priorities.</li>
+            <li>Secured RM30,000 in state government sponsorship as a student programme director.</li>
+          </ul>
+        </div>
+        <div class="skill-panel" id="s4">
+          <h3>Talent Selection</h3>
+          <p>Choosing the right people for development opportunities.</p>
+          <h4>Evidence</h4>
+          <ul>
+            <li>Screened 500+ applications and shortlisted 30+ candidates within one month for programme intake.</li>
+            <li>Conducted interviews and selection for Yayasan Peneraju scholarship programmes.</li>
+            <li>Spearheaded "Trainers Connect", attracting nearly 100 potential trainers and onboarding 80 Associate Trainers.</li>
+          </ul>
+        </div>
+        <div class="skill-panel" id="s5">
+          <h3>Training Delivery &amp; Facilitation</h3>
+          <p>Interactive sessions grounded in psychology, in English and Bahasa Melayu.</p>
+          <h4>Evidence</h4>
+          <ul>
+            <li>Over 1,100 participants reached through 14 invited sessions since 2024, from 20 to 300 participants per session.</li>
+            <li>Topics include stress and emotional awareness, resilience, youth leadership, digital wellbeing and career readiness.</li>
+            <li>Formats include workshops, keynotes, forum panels, programme facilitation and module development.</li>
+          </ul>
+        </div>
+        <div class="skill-panel" id="s6">
+          <h3>Stakeholders &amp; Partnerships</h3>
+          <p>Working comfortably with corporate, government and community partners.</p>
+          <h4>Evidence</h4>
+          <ul>
+            <li>Coordinate programmes with corporate partners, government agencies and industry stakeholders.</li>
+            <li>Develop strategic partnerships with government agencies and industry organisations for workforce development.</li>
+            <li>Supported ministerial engagements and stakeholder coordination as a Perdana Fellow at the Ministry of Education.</li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- 03 EXPERIENCE (tabs) -->
+<section id="experience">
+  <div class="wrap reveal">
+    <p class="eyebrow"><span>03</span>Experience</p>
+    <h2 class="section-title">Professional journey</h2>
+    <div class="exp-tabs">
+      <button class="exp-tab active" data-exp="e1">UOA Academy</button>
+      <button class="exp-tab" data-exp="e2">Metropolitan Corridor</button>
+      <button class="exp-tab" data-exp="e3">Ministry of Education</button>
+    </div>
+    <div class="exp-panel active" id="e1">
+      <div class="when">FEB 2025 – PRESENT · BANGSAR, KUALA LUMPUR</div>
+      <h3>UOA Academy (UOA Group Berhad)</h3>
+      <div class="role">Learning &amp; Growth Specialist · reporting directly to the Chief Learning Officer</div>
+      <ul>
+        <li>Manage end-to-end learning and development programmes, covering needs identification, programme planning, participant selection, training coordination, stakeholder engagement, implementation and reporting.</li>
+        <li>Conduct Training Needs Analysis (TNA) and translate findings into targeted learning programmes and implementation plans.</li>
+        <li>Support learning and talent development initiatives across UOA Group, aligning programme objectives with organisational needs.</li>
+        <li>Support corporate training and HRD Corp grant applications, including levy utilisation across UOA Group companies.</li>
+        <li>Spearheaded "Trainers Connect", attracting nearly 100 potential trainers and onboarding 80 Associate Trainers.</li>
+        <li>Screened and shortlisted 30+ candidates from 500+ applications within one month for programme intake.</li>
+        <li>Led learning programmes for nearly 100 underprivileged participants, supporting skills development, certification and employment.</li>
+        <li>Secured RM100,000 in government grant funding from the Department of Skills Development.</li>
+        <li>Support P&amp;L tracking and Q3–Q4 2026 forecasting, contributing to resource planning and 2027 business priorities.</li>
+      </ul>
+    </div>
+    <div class="exp-panel" id="e2">
+      <div class="when">AUG 2024 – FEB 2025 · SUBANG JAYA, SELANGOR</div>
+      <h3>Metropolitan Corridor Sdn Bhd</h3>
+      <div class="role">Academic Executive</div>
+      <ul>
+        <li>Managed participant development and intervention programmes focused on soft skills, character development and personal growth.</li>
+        <li>Analysed participant performance and development needs to support structured learning pathways for sponsored students pursuing professional certifications.</li>
+        <li>Conducted interviews and selection processes for Yayasan Peneraju scholarship programmes.</li>
+        <li>Held regular engagement sessions with educational institutions to monitor participant progress.</li>
+        <li>Supported planning and coordination of team-building and development activities for internal teams.</li>
+      </ul>
+    </div>
+    <div class="exp-panel" id="e3">
+      <div class="when">2022 · PUTRAJAYA</div>
+      <h3>Ministry of Education Malaysia</h3>
+      <div class="role">Perdana Fellow, Minister's Office</div>
+      <ul>
+        <li>Supported programme coordination, stakeholder engagement and official engagements involving government stakeholders.</li>
+        <li>Developed a policy proposal for an inclusive education programme for students with disabilities.</li>
+        <li>Assisted in preparing speeches, forewords and official communications for ministerial engagements.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 04 PROJECTS (expandable) -->
+<section id="projects" class="alt">
+  <div class="wrap reveal">
+    <p class="eyebrow"><span>04</span>Selected Projects</p>
+    <h2 class="section-title">Initiatives I have led</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">Trainer Development</span>
+        <h3>Trainers Connect</h3>
+        <p>A trainer engagement initiative to build UOA Academy's pool of qualified associate trainers.</p>
+        <div class="result">Result: 80 Associate Trainers onboarded from nearly 100 interested</div>
+        <div class="more"><ul>
+          <li>Spearheaded the initiative from trainer outreach and engagement through to onboarding.</li>
+          <li>Attracted nearly 100 potential trainers and onboarded 80 as UOA Academy Associate Trainers.</li>
+        </ul></div>
+        <button class="toggle">Read more ↓</button>
+      </div>
+      <div class="card">
+        <span class="tag">Skills to Employment</span>
+        <h3>Elderly Care Skills Programme</h3>
+        <p>A TVET pathway combining theory, practical training, certification and industry placement.</p>
+        <div class="result">Result: 83.3% employment placement in a tracked cohort</div>
+        <div class="more"><ul>
+          <li>Led learning programmes for nearly 100 underprivileged participants, from skills training and professional certification to employment.</li>
+          <li>Coordinated with corporate partners, government agencies and industry stakeholders to align training with employment outcomes.</li>
+        </ul></div>
+        <button class="toggle">Read more ↓</button>
+      </div>
+      <div class="card">
+        <span class="tag">Talent Selection</span>
+        <h3>Programme Intake Selection</h3>
+        <p>A large-scale screening exercise to select participants for a development programme.</p>
+        <div class="result">Result: 500+ applications screened, 30+ shortlisted in one month</div>
+        <div class="more"><ul>
+          <li>Screened more than 500 applications and shortlisted over 30 candidates within one month.</li>
+          <li>Supported talent identification and participant selection for the programme intake.</li>
+        </ul></div>
+        <button class="toggle">Read more ↓</button>
+      </div>
+      <div class="card">
+        <span class="tag">Leadership</span>
+        <h3>Malaysia Book of Records Programme</h3>
+        <p>"The Longest Non-Stop Public Speaking – 62 Hours" at UPSI, with participants of diverse age groups.</p>
+        <div class="result">Result: 300 participants, RM30,000 sponsorship, national record</div>
+        <div class="more"><ul>
+          <li>Led and coordinated the programme as Programme Director.</li>
+          <li>Secured RM30,000 in sponsorship from the State Government.</li>
+        </ul></div>
+        <button class="toggle">Read more ↓</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 TRAINING (filterable) -->
+<section id="training" class="train">
+  <div class="wrap reveal">
+    <p class="eyebrow"><span>05</span>Training &amp; Facilitation</p>
+    <h2 class="section-title">Invited sessions since 2024</h2>
+    <p class="lead">Beyond my full-time role, I deliver training on weekends by invitation from government agencies, foundations and community organisations. Filter by theme.</p>
+    <div class="filters">
+      <button class="filter active" data-f="all">All</button>
+      <button class="filter" data-f="wellbeing">Wellbeing</button>
+      <button class="filter" data-f="youth">Youth &amp; Leadership</button>
+      <button class="filter" data-f="career">Career Readiness</button>
+      <button class="filter" data-f="students">Students</button>
+      <button class="filter" data-f="community">Community</button>
+    </div>
+    <div class="count" id="count"></div>
+    <div class="sessions">
+      <div class="session" data-c="wellbeing"><div><div class="yr">SEP 2026</div><h4>Stress and Emotion Management Workshop</h4><small>Yayasan Tenaga Nasional Berhad (YTN) · Villea Morib</small></div><div class="pax"><b>60</b><span>participants</span></div></div>
+      <div class="session" data-c="wellbeing"><div><div class="yr">2026</div><h4>Port Healing: Stress and Emotional Awareness</h4><small>Bukit Bintang District Youth and Sports Office (JBSN)</small></div><div class="pax"><b>130</b><span>participants</span></div></div>
+      <div class="session" data-c="youth"><div><div class="yr">2026</div><h4>GenZ Meets Leaders 1.0, invited panellist</h4><small>Office of the Member of Parliament for Putrajaya</small></div><div class="pax"><b>30</b><span>participants</span></div></div>
+      <div class="session" data-c="career"><div><div class="yr">JUL 2025</div><h4>Career Transformation Talk for Asnaf, PATH 2025</h4><small>Lembaga Zakat Selangor · Shah Alam</small></div><div class="pax"><b>250</b><span>participants</span></div></div>
+      <div class="session" data-c="students"><div><div class="yr">MAY 2025</div><h4>Evolution Xpert: student life and success tips (online)</h4><small>Sekretariat Rakan Muda UPSI</small></div><div class="pax"><b>140</b><span>participants</span></div></div>
+      <div class="session" data-c="youth"><div><div class="yr">MAR 2025</div><h4>Module Development Workshop, International Youth Exchange Programme</h4><small>JBSN, Ministry of Youth and Sports (KBS) · Bangi</small></div><div class="pax"><b>—</b><span>panel</span></div></div>
+      <div class="session" data-c="wellbeing youth"><div><div class="yr">2025</div><h4>Physical and Mental Wellbeing, SSEAYP 2025 delegation (online)</h4><small>International Integration Unit, JBSN, and KABESA</small></div><div class="pax"><b>30</b><span>participants</span></div></div>
+      <div class="session" data-c="wellbeing youth"><div><div class="yr">SEP 2024</div><h4>Managing Emotions: ASEAN Trans Backpackers Pre-Departure Training</h4><small>International Integration Unit, JBSN, and KABESA · Cheras</small></div><div class="pax"><b>30</b><span>participants</span></div></div>
+      <div class="session" data-c="community wellbeing"><div><div class="yr">JUN 2024</div><h4>Smart Parenting: Children's Gadget Use and Parental Resilience</h4><small>Persatuan Penduduk Ampang Jaya</small></div><div class="pax"><b>300</b><span>participants</span></div></div>
+      <div class="session" data-c="students wellbeing"><div><div class="yr">JUN 2024</div><h4>Understanding My Emotions, for primary school children</h4><small>Sekolah Bimbingan Jalinan Kasih, Chow Kit</small></div><div class="pax"><b>100</b><span>participants</span></div></div>
+      <div class="session" data-c="students"><div><div class="yr">MAY 2024</div><h4>SPM Motivation: Preparing to Face the SPM Examination</h4><small>SMK Dato' Ahmad Rasidi, Changkat Jering, Perak</small></div><div class="pax"><b>100</b><span>participants</span></div></div>
+      <div class="session" data-c="community wellbeing"><div><div class="yr">2024</div><h4>Changing Lives and Understanding Mental Illness</h4><small>Kajang Women's Prison</small></div><div class="pax"><b>50</b><span>participants</span></div></div>
+      <div class="session" data-c="community students"><div><div class="yr">2024</div><h4>Hope: Rebuilding Life After Setbacks, Sekolah Integriti</h4><small>Kajang Women's Prison</small></div><div class="pax"><b>20</b><span>participants</span></div></div>
+      <div class="session" data-c="community"><div><div class="yr">PODCAST</div><h4>Podcast panellist: Understanding Paedophilia and Protecting Children</h4><small>UiTM Shah Alam students · Spotify and Apple Podcasts</small></div><div class="pax"><b>—</b><span>panel</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 GALLERY -->
+<section id="gallery">
+  <div class="wrap reveal">
+    <p class="eyebrow"><span>06</span>In Action</p>
+    <h2 class="section-title">From the field</h2>
+    <p class="lead">Click a photo to enlarge.</p>
+    <div class="gallery">
+      <figure><img src="Website_SitiFairuz/photo-ytn-group.jpg" alt=""><figcaption>With YTN scholars and the programme team, Villea Morib, 2026</figcaption></figure>
+      <figure><img src="Website_SitiFairuz/photo-ytn-1.jpg" alt=""><figcaption>Facilitating discussion with YTN scholars, 2026</figcaption></figure>
+      <figure><img src="Website_SitiFairuz/photo-ytn-2.jpg" alt=""><figcaption>Group body-mapping reflection, YTN, 2026</figcaption></figure>
+      <figure><img src="Website_SitiFairuz/photo-lzs-stage.jpg" alt=""><figcaption>Training opportunities briefing, Lembaga Zakat Selangor PATH 2025</figcaption></figure>
+      <figure><img src="Website_SitiFairuz/photo-lzs-group.jpg" alt=""><figcaption>With around 250 participants, Lembaga Zakat Selangor, 2025</figcaption></figure>
+      <figure><img src="Website_SitiFairuz/photo-genz.jpg" alt=""><figcaption>GenZ Meets Leaders 1.0, Putrajaya, 2026</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 07 EDUCATION -->
+<section id="education" class="alt">
+  <div class="wrap reveal">
+    <p class="eyebrow"><span>07</span>Education &amp; Recognition</p>
+    <h2 class="section-title">Education and awards</h2>
+    <div class="edu-grid">
+      <div class="edu"><div class="yr">2024</div><div><h3>Bachelor of Psychology (Hons.)</h3><p>Universiti Pendidikan Sultan Idris · CGPA 3.89 · Dean's List</p></div></div>
+      <div class="edu"><div class="yr">2019</div><div><h3>Diploma in Science</h3><p>Universiti Teknologi MARA, Tapah</p></div></div>
+      <div class="edu"><div class="yr">2024</div><div><h3>Royal Education Award</h3><p>Anugerah Pelajaran DiRaja – Pingat Jaya Cemerlang, UPSI</p></div></div>
+      <div class="edu"><div class="yr">2025</div><div><h3>Outstanding Graduate Award</h3><p>Persatuan Siswazah Wanita Malaysia (PSWM)</p></div></div>
+      <div class="edu"><div class="yr">2023</div><div><h3>Malaysian Delegate, SSEAYP</h3><p>Ship for Southeast Asian and Japanese Youth Programme</p></div></div>
+      <div class="edu"><div class="yr">2022</div><div><h3>Perdana Fellow</h3><p>Ministry of Education Malaysia</p></div></div>
+      <div class="edu"><div class="yr">2024</div><div><h3>Residential College Leadership Award</h3><p>Silver Category, MAPUM</p></div></div>
+      <div class="edu"><div class="yr">2023</div><div><h3>Best Presenter Award</h3><p>Regional Conference on Student Activism, UTP</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <p class="eyebrow"><span>08</span>Contact</p>
+    <h2 class="section-title">Let's talk about your L&amp;D team.</h2>
+    <p class="lead">I am open to Learning &amp; Development, talent development and training roles in Kuala Lumpur and the Klang Valley. My CV is available to download.</p>
+    <div class="contact-cards">
+      <div class="cc"><span>Email</span><a href="mailto:sfairuzejahar@gmail.com" id="email">sfairuzejahar@gmail.com</a><br><button class="copy" data-copy="sfairuzejahar@gmail.com">Copy email</button></div>
+      <div class="cc"><span>Phone / WhatsApp</span><a href="https://wa.me/60143222702" target="_blank" rel="noopener">+60 14-322 2702</a><br><button class="copy" data-copy="+60143222702">Copy number</button></div>
+      <div class="cc"><span>LinkedIn</span><a href="https://www.linkedin.com/in/fairuzejahar/" target="_blank" rel="noopener">linkedin.com/in/fairuzejahar</a></div>
+    </div>
+    <div class="btns">
+      <a href="Website_SitiFairuz/CV_Siti_Fairuz.pdf" target="_blank" class="btn btn-primary">⬇ Download CV</a>
+      <a href="mailto:sfairuzejahar@gmail.com" class="btn btn-ghost">Send an email</a>
+    </div>
+    <p class="ref">References available on request.</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <span>© 2026 Siti Fairuz Rohaliza · SF.</span>
-    <span>Wellbeing · Motivation · Youth Leadership · L&amp;D</span>
+    <span>Learning &amp; Development · Talent Development · Training</span>
   </div>
 </footer>
 
+<button id="toTop" aria-label="Back to top" onclick="window.scrollTo({top:0})">↑</button>
+<div id="lightbox"><button aria-label="Close">×</button><img src="" alt=""><p></p></div>
+
+<script>
+// Typing effect in hero
+(function(){
+  const words=["people development","training needs analysis","talent development","learning that works"];
+  const el=document.getElementById('typed');let w=0,c=words[0].length,del=true;
+  setTimeout(function tick(){
+    const word=words[w];
+    if(del){c--; if(c===0){del=false;w=(w+1)%words.length;}}
+    else{c++; if(c===words[w].length){del=true;el.textContent=words[w];return setTimeout(tick,2200);}}
+    el.textContent=words[w].slice(0,c)||' ';
+    setTimeout(tick,del?40:75);
+  },2200);
+})();
+
+// Reveal on scroll + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const co=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;co.unobserve(e.target);
+  const el=e.target,to=+el.dataset.to,comma=el.dataset.comma;let start=null;
+  function step(t){if(!start)start=t;const p=Math.min((t-start)/1400,1);const v=Math.round(to*(1-Math.pow(1-p,3)));
+    el.textContent=comma?v.toLocaleString('en-US'):v;if(p<1)requestAnimationFrame(step);}
+  requestAnimationFrame(step);
+}),{threshold:.5});
+document.querySelectorAll('.counter').forEach(el=>co.observe(el));
+
+// Strength tabs
+document.querySelectorAll('.skill-tab').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.skill-tab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.skill-panel').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');document.getElementById(b.dataset.skill).classList.add('active');
+}));
+
+// Experience tabs
+document.querySelectorAll('.exp-tab').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.exp-tab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.exp-panel').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');document.getElementById(b.dataset.exp).classList.add('active');
+}));
+
+// Expandable project cards
+document.querySelectorAll('.toggle').forEach(b=>b.addEventListener('click',()=>{
+  const m=b.previousElementSibling,open=m.style.maxHeight;
+  m.style.maxHeight=open?null:m.scrollHeight+'px';
+  b.textContent=open?'Read more ↓':'Show less ↑';
+}));
+
+// Training filter
+function filterSessions(f){
+  let n=0,p=0;
+  document.querySelectorAll('.session').forEach(s=>{
+    const show=f==='all'||s.dataset.c.split(' ').includes(f);
+    s.classList.toggle('hide',!show);
+    if(show){n++;const v=parseInt(s.querySelector('.pax b').textContent.replace(/,/g,''));if(!isNaN(v))p+=v;}
+  });
+  document.getElementById('count').textContent=n+' session'+(n>1?'s':'')+' · '+p.toLocaleString('en-US')+' participants';
+}
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');filterSessions(b.dataset.f);
+}));
+filterSessions('all');
+
+// Lightbox
+const lb=document.getElementById('lightbox');
+document.querySelectorAll('.gallery figure').forEach(f=>f.addEventListener('click',()=>{
+  lb.querySelector('img').src=f.querySelector('img').src;
+  lb.querySelector('p').textContent=f.querySelector('figcaption').textContent;
+  lb.classList.add('open');
+}));
+lb.addEventListener('click',e=>{if(e.target!==lb.querySelector('img'))lb.classList.remove('open');});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open');});
+
+// Copy buttons
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{
+  navigator.clipboard.writeText(b.dataset.copy).then(()=>{const t=b.textContent;b.textContent='Copied ✓';setTimeout(()=>b.textContent=t,1500);});
+}));
+
+// Scroll progress, active nav, back to top
+const links=[...document.querySelectorAll('.nav-links a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  document.getElementById('progress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+  document.getElementById('toTop').classList.toggle('show',h.scrollTop>600);
+  let cur=-1;secs.forEach((s,i)=>{if(s&&s.getBoundingClientRect().top<120)cur=i;});
+  links.forEach((a,i)=>a.classList.toggle('active',i===cur));
+});
+</script>
 </body>
 </html>
